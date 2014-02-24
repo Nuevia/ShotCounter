@@ -4,14 +4,42 @@
 <meta charset="ISO-8859-1">
 <title>ShotCounter</title>
 <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="jquery-1.11.0.min.js"> </script>
 <script type="text/javascript" src="index.js" ></script>
+
+<style type="text/css">
+    .box {
+        border: 1px solid #777;
+        padding: 5px;
+    }
+</style>
 
 </head>
 <body>
 <h1>ShotCounter</h1>
 
-<input type="text" id="field"></input>
-<input type="button" id="send">Send</input>
-<div id="content"></div>
+<div class="box">
+    <h2>Chat</h2>
+    <input type="text" id="txtMessage"></input>
+    <input type="button" id="btnSendMessage" value="Send"></input>
+</div>
+
+<div class="box">
+    <h2>Device Configuration</h2>
+    <div class="box">
+        <h3>COM Ports<h3>
+        <select id="cbxComPorts"></select>
+        <input type="button" id="btnConnect" value="Connect"></input>
+    </div>
+    <input type="text" id="write_to_address"></input>
+    <input type="text" id="write_to_val"></input>
+    <input type="button" id="btnWriteTo"></input>
+</div>
+
+<div id="logging" class="box">
+    <div>Log</div>
+    <div id="content" class="box"></div>
+</div>
+
 </body>
 </html>

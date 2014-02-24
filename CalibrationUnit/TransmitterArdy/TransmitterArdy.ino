@@ -27,9 +27,9 @@ void setup(){
   adxl.setInactivityZ(0);
  
   //look of tap movement on this axes - 1 == on; 0 == off
-  adxl.setTapDetectionOnX(0);
-  adxl.setTapDetectionOnY(0);
-  adxl.setTapDetectionOnZ(0);
+  adxl.setTapDetectionOnX(1);
+  adxl.setTapDetectionOnY(1);
+  adxl.setTapDetectionOnZ(1);
  
   //set values for what is a tap, and what is a double tap (0-255)
   adxl.setTapThreshold(50); //62.5mg per increment
@@ -61,13 +61,14 @@ void loop(){
   
   //Boring accelerometer stuff   
   int x,y,z;  
-  adxl.readAccel(&x, &y, &z); //read the accelerometer values and store them in variables  x,y,z
+  //adxl.readAccel(&x, &y, &z); //read the accelerometer values and store them in variables  x,y,z
 
   // Output x,y,z values - Commented out
   //Serial.print(x);
   //Serial.print(y);
   //Serial.println(z);
-  outputSensorAxisData(x,y,z);
+  
+  // outputSensorAxisData(x,y,z);
 
 
   //Fun Stuff!    
